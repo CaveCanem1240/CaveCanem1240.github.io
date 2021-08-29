@@ -302,6 +302,11 @@ img{
 }
 
 /*========== SERVICES ==========*/
+.interests__icon{
+  font-size: 5.8rem;
+  color: var(--first-color);
+}
+
 .services__container{
   row-gap: 2.5rem;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -329,6 +334,8 @@ img{
 }
 
 /*========== MENU ==========*/
+
+
 .menu__container{
   grid-template-columns: repeat(2, 1fr);
   justify-content: center;
@@ -372,10 +379,13 @@ img{
   bottom: 0;
   right: 0;
   display: flex;
-  padding: .625rem .813rem;
+  padding: .5rem .813rem;
   border-radius: .5rem 0 .5rem 0;
 }
-
+.arrow__icon{
+  font-size: 1.8rem;
+  color: var(--body-color);
+}
 /*========== APP ==========*/
 .app__data{
   text-align: center;
