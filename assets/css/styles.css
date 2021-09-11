@@ -480,11 +480,16 @@ img{
     text-align: initial;
   }
 
-  .about__img, .app__img{
+  .about__img{
     width: 380px;
     order: -1;
   }
 
+  .app__img{
+    padding-top: 16rem;
+    width: 300px;
+    order: -1;
+  }
   .contact__container{
     grid-template-columns: 1.75fr 1fr;
     align-items: center;
