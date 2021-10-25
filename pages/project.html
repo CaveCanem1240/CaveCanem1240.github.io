@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <!-- font awesom        e cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<!-- custom cursors  -->
+<!-- div class="cursor-1"></！div>
+<div-- class="cursor-2"></div-->
+
+
+<div id="menu-bars" class="fas fa-bars"></div>
+    
+<!-- header section starts  -->
+
+<header>
+    <div>
+        <a href="../documents/Yue Zhu_CV_1019.pdf" class="logo" target="_blank"> <span>YUE</span> ZHU </a>
+        <h2 class="info"> B.E ShanghaiTech University </h2>
+    </div>
+    <nav class="navbar">
+        <a href="../#projects">Projects</a>
+        <a href="../#experience">Experience</a>
+    </nav>
+    
+    <div class="follow">
+        <div class="reminder">
+            <h3 class="text">Github</h3>
+            <a href="https://github.com/CaveCanem1240?tab=repositories" class="fab fa-github" target="_blank"></a>
+        </div>
+        <div class="reminder">
+            <h3 class="text">Linkedin</h3>
+            <a href="https://www.linkedin.com/in/yue-zhu-9a8b0821a/" class="fab fa-linkedin" target="_blank"></a>
+        </div>
+        <div class="reminder">
+            <h3 class="text">CV</h3>
+            <a href="../documents/Yue Zhu_CV_1019.pdf" class="far fa-file" target="_blank"></a>
+        </div>
+        <!--a href="https://github.com/CaveCanem1240?tab=repositories" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/yue-zhu-9a8b0821a/" class="fab fa-linkedin"></a>
+        <a-- href="documents/CV.pdf" class="far fa-file"></a-->
+        <!--a href="documents/CV.pdf" class="bx bxs-file-doc"></a-->
+    </div>
+
+</header>
+
+<!-- header section ends -->
+
+<section class="projects" id="projects" style="min-height: 200vh;">
+
+    <h1 class="heading"> <span> Motion-powered </span> Gameboy </h1>
+
+    <div class="project-container" id="project-container">
+
+        <div class="box" id="box">
+            <div>
+                <div class="three" id="three">
+                    <script>
+                        var div = document.getElementById('three');
+                        console.log(div.offsetHeight);
+                    </script>
+                </div>
+                <script type="module">
+
+                    import * as THREE from './../threejs/build/three.module.js';
+        
+                    import { GUI } from './../threejs/examples/jsm/libs/dat.gui.module.js';
+                    import { OrbitControls } from './../threejs/examples/jsm/controls/OrbitControls.js';
+                    import { GLTFLoader } from './../threejs/examples/jsm/loaders/GLTFLoader.js';
+                    import { RGBELoader } from './../threejs/examples/jsm/loaders/RGBELoader.js';
+                    import Stats from './../threejs/examples/jsm/libs/stats.module.js';
+
+                    let container, stats, clock;
+                    
+                    let camera, scene, renderer, Eink;
+                    let gui;
+                    
+                    const state = { variant: 'midnight' };
+        
+                    init();
+                    //render();
+                    animate();
+                    function init() {
+        
+                        // const container = document.createElement( 'div' );
+                        // container.style.position = "absoulte";
+                        // container.style.zIndex = '1';
+                        // container.style.height = '50rem';
+                        // container.style.width = '100%';
+                        // container.style.overflow = "hidden";
+                        // container.style.top = '0rem';
+                        // container.style.objectFit = 'cover';
+                        // let currentSection = document.getElementById("projects");
+                        // document.body.insertBefore(container, currentSection);
+                        var three_box = document.getElementById('box');
+                        const box_innerHeight = three_box.offsetHeight;
+                        const box_innerWidth = three_box.offsetWidth;
+                        var abstract_box = document.getElementById('box-abstract');
+                        const max_Height = three_box.offsetHeight;
+                        
+                        console.log(box_innerHeight);
+                        console.log(box_innerWidth);
+
+                        const container = document.createElement( 'div' );
+                        container.style.position = "relative";
+                        container.style.zIndex = '1';
+                        // container.style.height = '100%';
+                        // container.style.width = '100%';
+                        container.style.overflow = "hidden";
+                        container.style.top = '0rem';
+                        container.style.objectFit = 'cover';
+                        //container.style.maxHeight = max_Height;
+
+                        let currentContainer = document.getElementById("three")
+                        //document.getElementsByID("projects").append(container);
+                        //document.body.append(container);
+                        //document.body.insertBefore(container, currentSection);
+                        currentContainer.appendChild( container );
+                        console.log(currentContainer);
+
+                        camera = new THREE.PerspectiveCamera( 45, box_innerWidth / box_innerHeight, 0.25, 20 );
+                        camera.position.set( 0.2, 0.05 , 0.4 );
+                        //camera.position.set( 0.1, -0.5 , 0.1 );
+                        
+                        scene = new THREE.Scene();
+                        
+                        clock = new THREE.Clock();
+                        // loading manager
+
+                        const loadingManager = new THREE.LoadingManager( function () {
+
+                            scene.add( Eink );
+
+                        } );
+
+                        new RGBELoader()
+                            .setPath( '../threejs/examples/textures/equirectangular/' )
+                            .load( 'quarry_01_1k.hdr', function ( texture ) {
+        
+                                texture.mapping = THREE.EquirectangularReflectionMapping;
+                                
+                                scene.background = new THREE.Color( 0xbbbbbb );//fcf2e8
+                                //scene.background = texture;
+                                scene.environment = texture;
+                                render();
+        
+                                // model
+        
+                                //const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
+                                const loader = new GLTFLoader().setPath( '../output/' );
+                                loader.load( 'gameboy.gltf', function ( gltf ) {
+        
+                                    //gltf.scene.scale.set( 10.0, 10.0, 10.0 );
+                                    //gltf.scene.scale.set( 8, 8, 8 );
+
+                                    const box = new THREE.Box3().setFromObject( gltf.scene );
+                                    const center = box.getCenter( new THREE.Vector3() );
+
+                                    // gltf.scene.position.x += ( gltf.scene.position.x - center.x );
+                                    // gltf.scene.position.y += ( gltf.scene.position.y - center.y );
+                                    // gltf.scene.position.z += ( gltf.scene.position.z - center.z );
+
+                                    console.log(gltf.scene.position);
+                                    gltf.scene.translateX(- 3*center.x);
+                                    gltf.scene.translateY(- 3*center.y);
+                                    gltf.scene.translateZ(- 3*center.z);
+                                    //gltf.scene.position.y += ( gltf.scene.position.y - center.y );
+                                    //gltf.scene.position.z += ( gltf.scene.position.z - center.z );
+                                    console.log(center);
+                                    console.log(gltf.scene.position);
+                                    gltf.scene.scale.set(3, 3, 3);
+                                    scene.add(gltf.scene);
+                                    Eink = gltf.scene;
+                                    // Eink = gltf.scene;
+                                    // Eink.scale.set(8, 8, 8);
+                                    // scene.add( Eink );
+                                    
+                                    //let center = getCenterPosition(Eink);
+                                    //Eink.position.set(-center.x, -center.y, -center.z);
+
+
+
+                                    
+                                    //Eink.scale.set( 8, 8, 8 );
+                                    
+                                    //scene.add( box );
+
+                                    render();
+        
+                                } );
+
+
+        
+                            } );
+                        
+                        renderer = new THREE.WebGLRenderer( { antialias: true } );
+                        renderer.setPixelRatio( window.devicePixelRatio );
+                        //renderer.setSize( window.innerWidth, window.innerHeight/2 );
+                        renderer.setSize( box_innerWidth, box_innerHeight );
+                        renderer.toneMapping = THREE.ACESFilmicToneMapping;
+                        renderer.toneMappingExposure = 1;
+                        renderer.outputEncoding = THREE.sRGBEncoding;
+                        container.appendChild( renderer.domElement );
+        
+                        const controls = new OrbitControls( camera, renderer.domElement );
+                        //controls.addEventListener( 'change', render ); // use if there is no animation loop
+                        controls.minDistance = 0.45;
+                        
+                        controls.maxDistance = 1;
+                        
+                        controls.target.set( 0, 0, 0 );
+                        //controls.target.set( 0.3, 0, -0.5 );
+                        //controls.target.set( -0.5, 0, -0.4 );
+                        controls.update();
+        
+                        window.addEventListener( 'resize', onWindowResize );
+        
+                    }
+        
+        
+                    function onWindowResize() {
+                        var three_box = document.getElementById('box');
+                        const box_innerHeight = three_box.offsetHeight;
+                        const box_innerWidth = three_box.offsetWidth;
+                        // var abstract_box = document.getElementById('box-abstract');
+                        // const max_Height = three_box.offsetHeight;
+
+                        camera.aspect = box_innerWidth /box_innerHeight ;
+                        //camera.aspect = window.innerWidth /(window.innerHeight/2) ;
+                        camera.updateProjectionMatrix();
+        
+                        //renderer.setSize( window.innerWidth, window.innerHeight/2 );
+                        renderer.setSize( box_innerWidth, box_innerHeight );
+                        //render();
+        
+                    }
+        
+                    //
+                    function animate() {
+
+                        requestAnimationFrame( animate );
+
+                        render();
+
+                    }
+                    
+                    function render() {
+
+                        const delta = clock.getDelta();
+
+                        if ( Eink !== undefined ) {
+
+                            //Eink.rotation.y += delta * 0.1;
+                            scene.rotateY(delta * 0.1);
+                            
+                        }
+
+                        renderer.render( scene, camera );
+
+                    }
+
+                    function changePivot(obj){
+                        let center = new THREE.Vector3();
+                        obj.geometry.computeBoundingBox();
+                        obj.geometry.boundingBox.getCenter(center);
+                        let wrapper = new THREE.Object3D();
+                        wrapper.position.set(center.x, center.y, center.z);
+                        obj.position.set(-center.x, -center.y, -center.z);
+                        wrapper.add(obj);
+                        //scene.add(wrapper)
+                        return wrapper;
+                    }
+
+
+                    
+                </script>
+
+            </div>
+            <!--img src="../images/bf_gameboy.png" alt=""-->
+            <h3> Motion-powered Gameboy</h3>
+            <div class="icons">
+                <a href="#" class="fas fa-cube"></a>
+                <a href="https://github.com/CaveCanem1240/Eink" class="fab fa-github" target="_blank"></a>
+            </div>
+        </div>
+
+        <div class="box-abstract" id="box-abstract">
+            <h1 class="project-subtitle"> <span> ABSTRACT </span></h1>
+            <h1 class="text">
+                We present ViPSN-Epaper, the first robust, motion-powered, user-friendly personal mobile gaming device. Our design is based on the ViPSN platform, implements with bistable energy harvester and bistable display. Bistable display technology makes it possible for screen-focused  interactive battery-free devices to show image continuously even after power failure. Given the unique advantage of mechanical potential energy pre-charging, bistable energy harverster can be treat as a relatively stable energy source. With pre-designed bistable energy harvester and advanced energy management method, the amount of energy generated by user motion can properly meet with which ViPSN-Epaper needs to perform a reaction. The design methodology of ViPSN-Epaper provides a valuable aspect for the development of interactive motion-powered devices. 
+            </h1>
+
+        </div>
+    </div>
+
+    
+    <h1 class="project-subtitle"> <span> Additional material </span></h1>
+    <h1 class="text"><a href="#" class="text" style="text-decoration: underline;"> <span> PPT </span></a></h1>
+    <div class="video-container" id="video-container">
+        <div class="box">
+            <video controls poster="../images/gameboy.jpg">
+                <source src="../videos/video.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <h1 class="project-subtitle"> <span> Overview  </span></h1>
+    <h1 class="project-subtitle"> <span> Bistable energy harvester  </span></h1>
+    <h1 class="project-subtitle"> <span> Energy harvesting circuit  </span></h1>
+    <h1 class="project-section"> <span> hardware  </span></h1>
+    <h1 class="project-subtitle"> <span> Energy management solutions  </span></h1>
+    <h1 class="project-section"> <span> solution 1  </span></h1>
+    <h1 class="project-subsection"> <span> software  </span></h1>
+    <h1 class="project-subsection"> <span> hardware  </span></h1>
+    <h1 class="project-section"> <span> solution 2  </span></h1>
+    <h1 class="project-subsection"> <span> software  </span></h1>
+    <h1 class="project-subsection"> <span> hardware  </span></h1>
+    <h1 class="project-section"> <span> comparison  </span></h1>
+    <h1 class="project-subtitle"> <span> Bistable display</span></h1>
+    <h1 class="project-section"> <span> hardware  </span></h1>
+    <h1 class="project-section"> <span> software  </span></h1>
+    <h1 class="project-subsection"> <span> State machine</span></h1>
+</section>
+
+
+<!-- footer section  -->
+<footer class="footer"> created by <span> YUE ZHU </span> | all rights reserved! </footer>
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="../js/script.js"></script>
+
+</body>
+</html>
