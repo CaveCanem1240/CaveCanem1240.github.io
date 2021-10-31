@@ -556,7 +556,6 @@ header .follow a:hover{
 }
 
 
-
 .background-pic-container .box .content-box .content{
     text-transform: uppercase;
     color:#fff;
@@ -568,6 +567,8 @@ header .follow a:hover{
 
 .projects .video-container{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap:1.5rem;
 }
@@ -620,15 +621,7 @@ header .follow a:hover{
 .projects .project-section
 {
     margin-top: 1rem;
-    font-size: 2rem;
-    padding-bottom: 1rem;
-    color:#333;
-    text-transform: uppercase;
-}
-.projects .project-section
-{
-    margin-top: 1rem;
-    font-size: 2rem;
+    font-size: 2.5rem;
     padding-bottom: 1rem;
     color:#333;
     text-transform: uppercase;
@@ -636,10 +629,10 @@ header .follow a:hover{
 .projects .project-subsection
 {
     margin-top: 1rem;
-    font-size: 1.5rem;
-    padding-bottom: 1rem;
-    color:#333;
     text-transform: uppercase;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    color:rgb(126, 126, 126);
 }
 .projects .text
 {
@@ -653,6 +646,17 @@ header .follow a:hover{
     font-size: 2rem;
     padding-bottom: 1rem;
     color:rgb(126, 126, 126);
+}
+.projects .content
+{
+    font-size: 1.7rem;
+    font-weight: normal;
+    padding-bottom: 1rem;
+    color:#333;
+}
+
+.projects .FSM-IMG{
+    width: 100%;
 }
 
 
