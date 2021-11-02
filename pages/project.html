@@ -143,10 +143,10 @@
                             scene.add( Eink );
 
                         } );
-
+                        
                         new RGBELoader()
                             .setPath( '../threejs/examples/textures/equirectangular/' )
-                            .load( 'quarry_01_1k.hdr', function ( texture ) {
+                            .load( 'venice_sunset_1k.hdr', function ( texture ) {
         
                                 texture.mapping = THREE.EquirectangularReflectionMapping;
                                 
@@ -159,7 +159,7 @@
         
                                 //const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
                                 const loader = new GLTFLoader().setPath( '../output/' );
-                                loader.load( 'gameboy.gltf', function ( gltf ) {
+                                loader.load( 'gameboy2.gltf', function ( gltf ) {
         
                                     //gltf.scene.scale.set( 10.0, 10.0, 10.0 );
                                     //gltf.scene.scale.set( 8, 8, 8 );
