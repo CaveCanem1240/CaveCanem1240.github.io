@@ -158,8 +158,8 @@
                                 // model
         
                                 //const loader = new GLTFLoader().setPath( 'models/gltf/MaterialsVariantsShoe/glTF/' );
-                                const loader = new GLTFLoader().setPath( '../output/' );
-                                loader.load( 'gameboy2.gltf', function ( gltf ) {
+                                const loader = new GLTFLoader().setPath( '../gltf/' );
+                                loader.load( 'gameboy.gltf', function ( gltf ) {
         
                                     //gltf.scene.scale.set( 10.0, 10.0, 10.0 );
                                     //gltf.scene.scale.set( 8, 8, 8 );
@@ -215,7 +215,7 @@
         
                         const controls = new OrbitControls( camera, renderer.domElement );
                         //controls.addEventListener( 'change', render ); // use if there is no animation loop
-                        controls.minDistance = 0.45;
+                        controls.minDistance = 0.25;
                         
                         controls.maxDistance = 1;
                         
