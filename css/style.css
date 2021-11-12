@@ -324,6 +324,9 @@ header .follow a:hover{
     background:#fff;
     border-radius: .5rem;
 }
+.projects .re-pro-box-container .box:hover{
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.507);
+}
 .projects .re-pro-box-container .box .box-img{
     height:20rem;
 }
@@ -423,7 +426,7 @@ header .follow a:hover{
 .projects .fun-container .box h3{
     position: absolute;
     z-index: 1;
-    top: 0.5rem;
+    top: 0rem;
     left: 16rem;
     font-size: 1.5rem;
     color:#333;
@@ -707,6 +710,24 @@ header .follow a:hover{
 
 
 /* media queries  */
+@media (min-width:1440px){
+
+
+    .experience .box-container .box{
+        padding-right: 0;
+    }
+
+    section{
+        padding:1rem 15%;
+        min-height: 100vh;
+    }
+    
+    .projects{
+        padding:1rem 15%;
+        min-height: 100vh;
+    }
+    
+}
 @media (max-width:991px){
 
     html{
@@ -734,6 +755,13 @@ header .follow a:hover{
         display: none;
     }
 
+    /* .projects .fun-container .box .icons{
+        bottom:0.5rem; left:0.5rem;
+    } */
+    .projects .fun-container .box h3 span{
+        display: none;
+        /* line-height: 1; */
+    }
 }
 
 @media (max-width:450px){
@@ -749,5 +777,4 @@ header .follow a:hover{
     .experience .box-container .box{
         padding-right: 0;
     }
-
 }
