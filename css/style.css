@@ -167,11 +167,16 @@ header .follow{
     bottom:7rem;
     transform: translate(50%, 0);
     right:50%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 header .follow .reminder{
-    display: inline-block;
-    text-align: center;
+    width: 7.5rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
 }
 /*
 header .follow .reminder{
@@ -179,20 +184,21 @@ header .follow .reminder{
     text-align: center;
 }*/
 header .follow .reminder h3{
-    font-size: 1rem;
-    color:#222;
+    font-size: 1.5rem;
+    /* color:#222; */
+    color:#fff;
     margin-bottom:0.2rem;
     z-index: -1;
 }
 header .follow .reminder:hover h3{
-    font-size: 1.5rem;
-    color:#fff;
+    font-size: 2rem;
+    color:var(--main-color);
     margin-bottom:0.7rem;
     z-index: 2;
 }
 
 header .follow .reminder a{
-    font-size: 2.5rem;
+    font-size: 3rem;
     color:#fff;
 }
 
@@ -200,7 +206,7 @@ header .follow .reminder a:hover{
     color:var(--main-color);
 }
 
-header .follow a{
+/* header .follow a{
     font-size: 2.5rem;
     color:#fff;
     margin:0 .7rem;
@@ -208,7 +214,7 @@ header .follow a{
 
 header .follow a:hover{
     color:var(--main-color);
-}
+} */
 
 #menu-bars{
     position: fixed;
@@ -270,6 +276,30 @@ header .follow a:hover{
     padding-right: 2rem;
     padding-bottom: 2rem;    
 }
+
+.experience .box-container .box .icons{
+    position: absolute;
+    top:1rem; right:3rem;
+    z-index: 10;
+}
+
+.experience .box-container .box .icons a{
+    display: inline-block;
+    height:3rem;
+    width:3rem;
+    border-radius: .5rem;
+    background: #eee;
+    color:#333;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    margin-bottom: 0rem;
+}
+.experience .box-container .box .icons a:hover{
+    background:var(--main-color);
+    color:#fff;
+}
+
 
 .experience .box-container .box::before{
     content: '';
@@ -554,14 +584,14 @@ header .follow a:hover{
 
 .projects .project-container .box-abstract .text
 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 1rem;
     color:#333;
 }
 
 .projects .project-container .box-abstract .text span
 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding-bottom: 1rem;
     color:rgb(126, 126, 126);
 }
@@ -613,7 +643,7 @@ header .follow a:hover{
 
 .projects .project-container .project-subtitle
 {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     font-size: 2.5rem;
     padding-bottom: 1rem;
     color:var(--main-color);
@@ -622,7 +652,7 @@ header .follow a:hover{
 
 .projects .project-subtitle
 {
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     font-size: 2.5rem;
     padding-bottom: 1rem;
     color:var(--main-color);
@@ -650,8 +680,23 @@ header .follow a:hover{
     text-transform: uppercase;
     font-size: 2rem;
     padding-bottom: 1rem;
+}
+.projects .project-subsection span
+{
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-size: 2rem;
+    padding-bottom: 1rem;
     color:rgb(126, 126, 126);
 }
+.projects .project-figure-tittle
+{
+    margin-top: 1rem;
+    font-size: 2rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
 .projects .text
 {
     font-size: 2rem;
