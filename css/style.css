@@ -718,9 +718,12 @@ header .follow a:hover{
     color:#333;
 }
 
-.projects .EXP-IMG{
-    width: 100%;
-    max-width: 100rem;
+.projects .img-contianer{
+    text-align: center;
+}
+
+.projects .img-contianer .EXP-IMG{
+    max-height: 45rem;
 }
 
 
