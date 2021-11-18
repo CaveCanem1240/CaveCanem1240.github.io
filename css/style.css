@@ -623,16 +623,14 @@ header .follow a:hover{
 
 
 .projects .video-container{
-    display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     gap:1.5rem;
 }
 
 .projects .video-container .box{
     margin-top: 2rem;
-    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
     overflow:hidden;
 }
 
