@@ -149,18 +149,23 @@ header .navbar{
 }
 
 
-header  a{
+header  .menu-button{
     display: block;
     font-size: 2rem;
     color:#fff;
     margin:2rem 0;
 }
 
-header  a:hover{
+header  .menu-button:hover{
     letter-spacing: .2rem;
     color:var(--main-color);
 }
-
+header .navbar a{
+    display: block;
+    font-size: 2rem;
+    color:#fff;
+    margin:2rem 0;
+}
 header .navbar a span{
     display: block;
     font-size: 1.7rem;
