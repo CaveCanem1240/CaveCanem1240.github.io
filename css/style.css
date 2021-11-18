@@ -149,11 +149,27 @@ header .navbar{
 }
 
 
-header .navbar a{
+header  a{
     display: block;
     font-size: 2rem;
     color:#fff;
     margin:2rem 0;
+}
+
+header  a:hover{
+    letter-spacing: .2rem;
+    color:var(--main-color);
+}
+
+header .navbar a span{
+    display: block;
+    font-size: 1.7rem;
+    color:#fff;
+    margin:1.5rem 0;
+}
+header .navbar a span:hover{
+    letter-spacing: .2rem;
+    color:var(--main-color);
 }
 
 header .navbar a:hover{
@@ -715,6 +731,13 @@ header .follow a:hover{
     font-size: 1.7rem;
     font-weight: normal;
     padding-bottom: 1rem;
+    color:#333;
+}
+.projects .content .content-steps
+{
+    font-size: 1.5rem;
+    font-weight: normal;
+    padding-left: 3rem;
     color:#333;
 }
 
