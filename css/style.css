@@ -202,7 +202,7 @@ header .follow .reminder a{
     color:#fff;
 }
 
-header .follow .reminder a:hover{
+header .follow .reminder:hover a{
     color:var(--main-color);
 }
 
