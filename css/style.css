@@ -743,6 +743,10 @@ header .follow a:hover{
     padding-left: 3rem;
     color:#333;
 }
+.projects .content .EXP-IMG{
+    margin: 2rem;
+    width: 100%;
+}
 
 .projects .img-contianer{
     text-align: center;
