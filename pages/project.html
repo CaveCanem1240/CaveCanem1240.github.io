@@ -349,11 +349,11 @@
         <div class="content-steps">
             <br>1.	The initial position of the magnet on the harvester is at one of the two lowest overall energy points.
             <br>
-            <br>2.	While the user continues pressing the magnet, potential energy is stored in both mechanical plectrum and magnetic fields.
+            <br>2.	While the user continues pressing the plectrum, the plectrum gets bend. The elastic force from the plectrum increases with the bending (but is still smaller than the magnetic force in this process), elastic potential energy is stored in the bend plectrum.
             <br>
-            <br>3.	The magnet will reach the critical point when the pressing force comes to 18N. At this point, the elastic force from the plectrum equals the magnetic force, and the magnet is still at the initial position.
+            <br>3.	The plectrum will reach the critical point when the elastic force offered by the plectrum equals the magnetic force, and the magnet is still at the initial position.
             <br>
-            <br>4.	A force larger than 18N will break the balance. After that, the magnetic force cannot counteract the elastic force anymore; energy stored in the plectrum will be released to speed up the magnet to move from the initial position. The magnetic force from the other side will increase with displacement increasing, which will furtherly speed up the magnet until it moves to the other stable position. The total energy will fall to the other lowest points in the potential well at the same time. During this process, the magnetic field intensity through the coil rapidly changes so that energy can be released in the form of charge transition.
+            <br>4.	A elastic force larger than the magnetic force will break the balance. After that, the magnetic force cannot counteract the elastic force anymore; energy stored in the plectrum will be released to speed up the magnet to move from the initial position. The magnetic force from the other side will increase with displacement increasing, which will furtherly speed up the magnet until it moves to the other stable position. The total energy will fall to the other lowest points in the potential well at the same time. During this process, the magnetic field intensity through the coil rapidly changes so that energy can be released in the form of charge transition.
             <br> 
         </div>
         
@@ -406,9 +406,15 @@
     </h1>
     <h1 class="project-section">  Solution based on flash   </h1>
     <h1 class="content">
-        <span>The first thing to do is to reduce power consumption by maximizing time in low-power modes. 
-
+        <span>There are several things to do to reduce power consumption:
         </span>
+        <div class="content-steps">
+            <br>1.	Maximizing time in low-power modes (interrupts to wake the processor and control program flow);
+            <br>
+            <br>2.	Switching on peripherals only when needed;
+            <br>
+            <br>3.	Reduce extra control flow.
+        </div>
     </h1>
     <h1 class="project-section"> <span> hardware  </span></h1>
     <h1 class="project-figure-tittle"> <span> Fig. Hardware Architecture</span></h1>
