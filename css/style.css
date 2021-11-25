@@ -71,6 +71,21 @@ section{
     text-transform: uppercase;
 }
 
+
+.projects .intro{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color:rgb(75, 75, 75);
+    font-weight: normal;
+}
+/* .projects .intro span{
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    color:rgb(75, 75, 75);
+    font-weight: bold;
+} */
+
+
 .sub-heading{
     font-size: 2.5rem;
     padding-bottom: 1rem;
