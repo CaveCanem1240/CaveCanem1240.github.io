@@ -35,6 +35,7 @@
         <a href="#box-abstract"><span>Abstract</span></a>
         <a href="#Harvester"><span>Harvester</span></a>
         <a href="#Energy-solution"><span>Energy Solutions</span></a>
+        <a href="#energy-cmp"><span>Energy Consumption</span>
         <a href="#charge-circle"><span>Working Circle</span></a>
         <!-- <a href="../#experience">Experience</a> -->
     </nav>
@@ -369,7 +370,7 @@
     <h1 class="content"><span>
         <br> E-ink rearranges pigment particles by applying an electric field, and the particles reflect ambient light to display.
         <br>
-        <br> In this project, 1.54-inch E-paper GDEH0154D67 is used for the field test, which is one of the most low-power and non-customized Electrophoretic Display(EPD) that we can find.
+        <br> In this project, 1.54-inch E-paper GDEH0154D67 is used for the field test, which is one of the most low-power and off-the-shelf commercial Electrophoretic Display (EPD) that we can find. GDEH0154D67 integrates the EPD panel with the corresponding IC and circuit; GDEH0154D67 works as the peripheral of MCU in specific applications and is controlled over SPI. As most peripherals are in the market, the module is not optimized for battery-free applications. Thus, the operation flow should be treated as a high-energy-consumption atomic task.
         <img class="EXP-IMG" src="../images/operation flow.svg" alt="">
         <br> Typical operation flow is shown in Fig. EPD must be initialized once power-on; after that, the operation should always be Full-screen Update. In this mode, the EPD will be cleaned up first, and then the image can be updated to the display. After performing a Full-screen Update, the EPD can enter the Partial Update mode, in which the EPD can update the content without cleaning up the old image first. 
         <br> 
@@ -389,7 +390,7 @@
     </span>
     </h1>
     <h1 class="project-figure-tittle"> <span> Chart. Energy Generated at different Initial Voltage</span></h1>
-    <div class="img-contianer" id="charge-circle">
+    <div class="img-contianer">
         <img class="EXP-IMG" src="../images/Energy per click.svg" alt="">
     </div>
     <h1 class="project-subtitle" id="Energy-solution"> <span> Energy management solutions  </span></h1>
@@ -479,8 +480,8 @@
         <img class="EXP-IMG" src="../images/FRAM-based power.svg" alt="">
     </div>
     <h1 class="project-section" id="Camparison">  comparison </h1>
-    <h1 class="project-figure-tittle"> <span> Chart. Comparison of Energy Consumption using different Energy Solution</span></h1>
-    <div class="img-contianer" id="charge-circle">
+    <h1 class="project-figure-tittle" id="energy-cmp"> <span> Chart. Comparison of Energy Consumption using different Energy Solution</span></h1>
+    <div class="img-contianer" >
         <img class="EXP-IMG" src="../images/Comparison.svg" alt="">
     </div>
     <h1 class="project-subtitle" id=""> <span> Pre-design from demand</span></h1>
@@ -492,7 +493,7 @@
     </h1>
     
     <h1 class="project-figure-tittle"> <span> Fig. Exploded View</span></h1>
-    <div class="img-contianer" id="charge-circle">
+    <div class="img-contianer">
         <img class="EXP-IMG" src="../images/Boom.png" alt="">
     </div>
     <h1 class="content">
