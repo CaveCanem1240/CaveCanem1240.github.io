@@ -452,7 +452,7 @@
             <br>
             <br>And we modified the operation flow of the EPD as shown in the figure in Section: Bistable Display. It is a little trick that I found in experiments that perhaps does not work for other peripheral. The modification makes it possible to jump over the full-screen update process, which is required by the manufacturer in the sample code. After that, we can transmit the old and the new image sequentially, then call the function to process the partial display. We also modified the SPI protocol by finding the most energy-efficient transmission rate and putting the MCU into sleep mode with the help of Direct Memory Access (DMA) and interrupts.
             <br>
-            <br>The energy consumption is reduced by 70 percent.
+            <br>The total energy consumption is reduced by 70 percent as shown in <a href="#energy-cmp" style="color: black;font-style: italic;text-decoration: underline;">Table 5</a>.
         </span>
     </h1>
     <h1 class="project-section"> <span> hardware  </span></h1>
