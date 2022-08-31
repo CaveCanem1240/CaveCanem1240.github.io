@@ -633,10 +633,16 @@ header .follow a:hover{
 }
 
 
-.background-pic-container .box .content-box .content{
+.background-pic-container .box .content-box .name{
     text-transform: uppercase;
     color:#fff;
     font-size: 5vw;
+    font-weight: bolder;
+    text-align: center;
+}
+.background-pic-container .box .content-box .content{
+    color:#fff;
+    font-size: 1vw;
     font-weight: bolder;
     text-align: center;
 }
